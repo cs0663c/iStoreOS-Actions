@@ -53,7 +53,7 @@ image:
 	make image EXTRA_IMAGE_NAME="<string>" # Add this to the output image filename (sanitized)
 	make image DISABLED_SERVICES="<svc1> [<svc2> [<svc3> ..]]" # Which services in /etc/init.d/ should be disabled
 	make image ADD_LOCAL_KEY=1 # store locally generated signing key in built images
-	make image ROOTFS_PARTSIZE="<size>" # override the default rootfs partition size in MegaBytes
+	make image ROOTFS_PARTSIZE="2048" # override the default rootfs partition size in MegaBytes
 
 manifest:
 	List "all" packages which get installed into the image.
