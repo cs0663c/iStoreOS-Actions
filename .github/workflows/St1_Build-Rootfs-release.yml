@@ -27,6 +27,9 @@ on:
           - 'yes'
           - 'no'
 
+env:
+  VERSION: 24.10.3
+
 jobs:
   build:
     runs-on: ubuntu-22.04
@@ -64,7 +67,7 @@ jobs:
 
     - name: ⏬ 下载 ImageBuilder
       run: |
-        curl -L -o imagebuilder.tar.zst https://github.com/Kwonelee/iStoreOS-Actions/releases/download/iStoreOS-ImageBuilder-20250905/istoreos-imagebuilder-armsr-armv8.Linux-x86_64.tar.zst
+        curl -L -o imagebuilder.tar.zst https://github.com/Kwonelee/iStoreOS-Actions/releases/download/iStoreOS-ImageBuilder-20251017/istoreos-imagebuilder-armsr-armv8.Linux-x86_64.tar.zst
         tar --use-compress-program=unzstd -xvf imagebuilder.tar.zst
         mv istoreos-imagebuilder-* imagebuilder
 
@@ -78,8 +81,6 @@ jobs:
         mkdir -p imagebuilder/files/etc/{uci-defaults,opkg,banner1}
         #添加开机启动脚本
         cp files/etc/uci-defaults/99-custom.sh imagebuilder/files/etc/uci-defaults/
-        #替换软件源
-        cp files/etc/opkg/distfeeds.conf imagebuilder/files/etc/opkg/
         #替换O大打包脚本的默认banner
         cp files/etc/banner imagebuilder/files/etc/banner1/
         mkdir -p imagebuilder/files/etc/openclash/core
@@ -114,9 +115,9 @@ jobs:
     - name: 🚀 上传到 Release
       uses: softprops/action-gh-release@v2.2.1
       with:
-        tag_name: iStoreOS-24.10-RELEASE-${{ inputs.network_settings }}
+        tag_name: iStoreOS-${{ env.VERSION }}-RELEASE-${{ inputs.network_settings }}
         body: |
-          📌 版本： iStoreOS-24.10.2-RELEASE（imagebuilder构建，稳定版）
+          📌 版本： iStoreOS-${{ env.VERSION }}-RELEASE（imagebuilder构建，稳定版）
           
           📂 来源： https://fw.koolcenter.com/iStoreOS/ib/armsr/
           

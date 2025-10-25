@@ -6,10 +6,10 @@ on:
       openwrt_board:
         description: "请选择设备型号"
         required: true
-        default: "jp-tvbox_wxy-oect_fine3399_dg-tn3568"
+        default: "a311d-oes_s905d_wxy-oect_jp-tvbox_s922x-oes-plus_fine3399_sv-33a6x_dg3399_dg-tn3568_smart-am40_smart-am60_sw799_king3399_panther-x2_firefly-rk3399_s905l3a"
         type: choice
         options:
-          - jp-tvbox_wxy-oect_fine3399_dg-tn3568
+          - a311d-oes_s905d_wxy-oect_jp-tvbox_s922x-oes-plus_fine3399_sv-33a6x_dg3399_dg-tn3568_smart-am40_smart-am60_sw799_king3399_panther-x2_firefly-rk3399_s905l3a
           - a311d
           - a311d-oes
           - alark35-3500
@@ -51,13 +51,13 @@ on:
           - orangepi-5-plus
           - orangepi-5b
           - panther-x2
+          - photonicat
           - r66s
           - r68s
           - renegade-rk3328
           - rk3318-box
           - rock5b
           - rock5c
-          - rp-rk3568
           - ruisen-box
           - s905
           - s905-beelink-mini
@@ -170,7 +170,7 @@ on:
       openwrt_kernel:
         description: "请选择内核版本（若未匹配则自动）"
         required: true
-        default: "6.6.y"
+        default: "6.1.y"
         type: choice
         options:
           - 5.10.y
@@ -178,6 +178,9 @@ on:
           - 6.1.y
           - 6.6.y
           - 6.12.y
+
+env:
+  VERSION: 24.10.3
 
 jobs:
   build:
@@ -221,7 +224,7 @@ jobs:
           for FILE in ${{ env.PACKAGED_OUTPUTPATH }}/*.img.gz; do
             echo "Processing file: $FILE"
             FILENAME=$(basename "$FILE")
-            NEW_FILENAME=$(echo "$FILENAME" | sed 's/openwrt/istoreos_24.10.2/g')
+            NEW_FILENAME=$(echo "$FILENAME" | sed 's/openwrt/istoreos_${{ env.VERSION }}/g')
             if [ "$FILENAME" != "$NEW_FILENAME" ]; then
               mv "$FILE" "${{ env.PACKAGED_OUTPUTPATH }}/$NEW_FILENAME"
               echo "Renamed $FILENAME to $NEW_FILENAME"
@@ -233,9 +236,9 @@ jobs:
       - name: 🚀 上传到 Release
         uses: softprops/action-gh-release@v2.2.1
         with:
-          tag_name: iStoreOS-24.10-SNAPSHOT-dhcp
+          tag_name: iStoreOS-${{ env.VERSION }}-SNAPSHOT-dhcp
           body: |
-            🔄 版本： iStoreOS-24.10.2-SNAPSHOT（源码编译，追新版）
+            🔄 版本： iStoreOS-${{ env.VERSION }}-SNAPSHOT（源码编译，追新版）
             
             📂 来源： https://github.com/istoreos/istoreos
             

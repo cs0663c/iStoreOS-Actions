@@ -5,14 +5,16 @@
 
 > **To All Who Are Frustrated Because Your Initial IP Doesn’t Match the Current Network Environment, Causing Login Failures!!!**
 
+> **😂如果您对当前项目有抵触心理，也欢迎您使用这个项目😂👉👉👉[iStoreOS-Native](https://github.com/Kwonelee/iStoreOS-Native)**
+
 > **使用此仓库必须设置机密token，Actions云编译固件时需要用到，通常在仓库设置里面。机密键名为 `GH_TOKEN`（严禁在仓库可视代码中填写，否则后果自负）**
 
 # 😅Built-in package plan
 | 插件                     | 状态 | 插件                      | 状态  |
 |:------------------------:|:----:|:------------------------:|:----:|
-| ramfree释放内存          | ✅   | openlist2                | ✅   |
-| FileBrowser文件浏览      | ✅   | adguardhome              | ✅   |
-| lucky                    | ✅   | luci-app-amlogic        | ✅   |
+| ramfree释放内存          | ✅   | openlist2                | ⏳   |
+| FileBrowser文件浏览      | ✅   | adguardhome              | ⏳   |
+| lucky                    | ⏳   | luci-app-amlogic        | ✅   |
 | 其他                     | ⏳   |                         |       |
 
 ✅ 支持 ； ⏳ 计划中 ； ❌ 不支持
@@ -38,7 +40,7 @@
 | s905lb   | Q96-mini, BesTV-R3300L, SumaVision-Q7, MG101, s65, IPBS9505 |
 | s905     | Beelink-Mini-MX-2G, Sunvell-T95M, MXQ-Pro+4K, SumaVision-Q5 |
 | rk3588(s)| Radxa-Rock5B, Radxa-Rock5C, Orange-Pi-5-Plus, Beelink-IPC-R, HLink-H88K, HLink-H88K-V3, NanoPC-T6, Smart-Am60, DC-A588, Orangepi-5B |
-| rk3568   | FastRhino-R66S, FastRhino-R68S, Radxa-E25, NanoPi-R5S, NanoPi-R5C, HLink-H66K, HLink-H68K, HLink-H69K, Seewo-sv21, Mrkaio-m68s, Swan1-w28, Ruisen-box, DG-TN3568, Alark35-3500, MMBox-Anas3035, Wocyber-A3, RP-RK3568 |
+| rk3568   | FastRhino-R66S, FastRhino-R68S, Radxa-E25, NanoPi-R5S, NanoPi-R5C, HLink-H66K, HLink-H68K, HLink-H69K, Seewo-sv21, Mrkaio-m68s, Swan1-w28, Ruisen-box, DG-TN3568, Alark35-3500, MMBox-Anas3035, Wocyber-A3, Photonicat |
 | rk3566   | Panther-X2, JP-TvBox, LCKFB-Taishan-Pi, WXY-OEC-turbo-4g, Station-M2 |
 | rk3528   | HLink-H28K, Radxa-E20C, H96-Max-M2 |
 | rk3399   | EAIDK-610, King3399, TN3399, Kylin3399, ZCube1-Max, CRRC, SMART-AM40, SW799, ZYSJ, DG-3399, DLFR100, Emb3531, Leez-p710, tvi3315a, xiaobao, Fine3399, Firefly-RK3399, LX-R3S, Hugsun-x99, Tb-ls3399, Hisense-hs530r, Tpm312, ZK-rk39a, YSKJ, Fmx1-Pro, Sv-33a6x |
@@ -55,6 +57,6 @@
 > **"您的每一个⭐️，都是开源土壤里的一缕阳光，让灵感发芽，让创造生长~"**
 
 # 🙏Thanks
+- [istoreos](https://github.com/istoreos/istoreos)
 - [istoreos-builder](https://github.com/wukongdaily/istoreos-builder)
 - [amlogic-s9xxx-openwrt](https://github.com/ophub/amlogic-s9xxx-openwrt)
-- [istoreos](https://github.com/istoreos/istoreos)
